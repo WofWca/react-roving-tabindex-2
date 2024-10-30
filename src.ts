@@ -85,6 +85,12 @@ export function useRovingTabindex(elementRef: RefObject<HTMLElement>) {
     // if this means something to us practically.
     setAsActiveElement: () => context.setActiveElement(elementRef.current),
     activeElement: context.activeElement,
+    /**
+     * The target elements must have this class name set.
+     * It's the same value that is provided to
+     * {@link ProviderProps.classNameOfTargetElements}.
+     */
+    className: context.classNameOfTargetElements,
   }
 }
 
@@ -97,6 +103,7 @@ type ContextValue = {
   activeElement: HTMLElement | null
   onKeydown: (event: React.KeyboardEvent) => void
   setActiveElement: (element: HTMLElement | null) => void
+  classNameOfTargetElements: string
 }
 
 type ProviderProps = PropsWithChildren<{
@@ -117,6 +124,7 @@ export const RovingTabindexContext = createContext<ContextValue>({
   activeElement: null,
   onKeydown: () => {},
   setActiveElement: () => {},
+  classNameOfTargetElements: 'roving-tabindex',
 })
 
 /** @see {@link useRovingTabindex} */
@@ -232,6 +240,7 @@ export function RovingTabindexProvider({
       activeElement,
       onKeydown,
       setActiveElement,
+      classNameOfTargetElements,
     },
     children,
   })
