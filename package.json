@@ -1,0 +1,41 @@
+{
+  "name": "react-roving-tabindex-2",
+  "description": "A simple React implementation of roving tabindex",
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "WofWca",
+    "email": "wofwca@protonmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WofWca/react-roving-tabindex-2.git"
+  },
+  "keywords": [
+    "react",
+    "a11y",
+    "accessibility",
+    "roving-tabindex",
+    "tabindex",
+    "focus",
+    "widget"
+  ],
+  "module": "./dist/src.js",
+  "types": "./dist/src.d.ts",
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@types/react": ">=18",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "src.ts",
+    "LICENSE",
+    "package.json"
+  ]
+}

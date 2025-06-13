@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "preserve",
+    "target": "es2020",
+    "declaration": true,
+    "outDir": "./dist",
+    // IDK, tsc complains about React type declarations otherwise.
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"]
+}
