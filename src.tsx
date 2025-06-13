@@ -1,4 +1,3 @@
-import { getLogger } from '@deltachat-desktop/shared/logger'
 import React, {
   createContext,
   PropsWithChildren,
@@ -69,7 +68,10 @@ export function useRovingTabindex(elementRef: RefObject<HTMLElement>) {
   }
 }
 
-const log = getLogger('contexts/RovingTabindex')
+let log: Pick<typeof console, 'info' | 'debug' | 'warn' | 'error'> = console
+export const setLogger = (newLogger: typeof log) => {
+  log = newLogger
+}
 
 type ContextValue = {
   activeElement: HTMLElement | null
