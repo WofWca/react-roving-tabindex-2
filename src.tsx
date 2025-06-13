@@ -209,15 +209,12 @@ export function RovingTabindexProvider({
     [activeElement, classNameOfTargetElements, wrapperElementRef]
   )
 
-  return (
-    <RovingTabindexContext.Provider
-      value={{
-        activeElement,
-        onKeydown,
-        setActiveElement,
-      }}
-    >
-      {children}
-    </RovingTabindexContext.Provider>
-  )
+  return createElement(RovingTabindexContext.Provider, {
+    value: {
+      activeElement,
+      onKeydown,
+      setActiveElement,
+    },
+    children,
+  })
 }
