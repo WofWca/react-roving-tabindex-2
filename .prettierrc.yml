@@ -1,0 +1,9 @@
+# To match
+# https://github.com/deltachat/deltachat-desktop/blob/4ba8caadc9951d195d163b41fd293ce04b80318f/.prettierrc.yml
+trailingComma: es5
+tabWidth: 2
+semi: false
+singleQuote: true
+jsxSingleQuote: true
+endOfLine: auto
+arrowParens: avoid
