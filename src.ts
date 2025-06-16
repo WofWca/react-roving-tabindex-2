@@ -57,7 +57,7 @@ import {
  *   e.g. upon initialization.
  *   Then `tabindex` is 0 for all the components,
  *   until `setAsActiveElement` is called explicitly.
- * - lacks "Home", "End" key handling, and some other features.
+ * - probably lacks some other features
  */
 export function useRovingTabindex(elementRef: RefObject<HTMLElement | null>) {
   const context = useContext(RovingTabindexContext)
