@@ -53,9 +53,14 @@ function MyButton(props: { label: string }) {
   return (
     <button
       ref={ref}
+      // `className` must be set on the target elements
       className={rovingTabindex.className + ' ' + 'my-class-name'}
       tabIndex={rovingTabindex.tabIndex}
+      // Listen on arrow keys
       onKeyDown={rovingTabindex.onKeydown}
+      // You can also call `setAsActiveElement()` at your discretion,
+      // but having it `onFocus` is basically a requirement
+      // in order for the widget to work as expected.
       onFocus={rovingTabindex.setAsActiveElement}
     >
       {props.label}
