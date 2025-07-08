@@ -92,7 +92,7 @@ Implementing roving tabindex behavior incorrectly could do more harm than good.
 Ensure that it's always clear to screen reader users
 that they're skipping over some content when they press Tab.
 For example, verify that the screen reader announces
-the number of elements in the list(see
+the number of elements in the list (see
 [`aria-setsize`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)).
 
 Actually try using your software with your eyes closed.
