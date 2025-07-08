@@ -1,6 +1,6 @@
 # react-roving-tabindex-2
 
-A simple React implementation of
+A simple and flexible React implementation of
 [roving tabindex](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets#technique_1_roving_tabindex).
 
 Compared to <https://github.com/stevejay/react-roving-tabindex>,
@@ -17,6 +17,8 @@ Things that it does not support (yet):
 
 - Setting the initially active element, i.e. when the widget receives focus
   for the first time, the first or the last item will receive focus.
+
+It has minimal state: only one `useState` to store the currently active element.
 
 ## Usage
 
@@ -71,11 +73,27 @@ function MyButton(props: { label: string }) {
 
 ## Advice on utilizing roving tabindex and accessibility
 
-Sometimes implementing roving tabindex behavior can do more harm than good.
+This library does not provide you with "out of the box" accessibility.
+Its only responsibility is to manage `tabindex` and focus.
+You are responsible for applying the appropriate `aria-` attributes and such.
+
+If you need this library, you are probably implementing
+one of the following patterns:
+
+- [Listbox](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)
+- [Tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+- [Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/)
+- [Grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/)
+- [Combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/)
+
+Follow the linked guides to make sure that your widget is accessible.
+
+Implementing roving tabindex behavior incorrectly could do more harm than good.
 Ensure that it's always clear to screen reader users
 that they're skipping over some content when they press Tab.
 For example, verify that the screen reader announces
-the number of elements in the list.
+the number of elements in the list(see
+[`aria-setsize`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)).
 
 Actually try using your software with your eyes closed.
 Having added roving tabindex, you might have fixed
